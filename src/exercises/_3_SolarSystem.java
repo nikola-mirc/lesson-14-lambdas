@@ -2,7 +2,6 @@ package exercises;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class _3_SolarSystem {
@@ -15,40 +14,19 @@ public class _3_SolarSystem {
 
 		// 1: Sort the planets by distance from the sun
 
-		Collections.sort(planets, new Comparator<Planet>() {
-
-			@Override
-			public int compare(Planet p1, Planet p2) {
-				return p1.getDistanceFromSun() - p2.getDistanceFromSun();
-			}
-
-		});
+		Collections.sort(planets, ((Planet p1, Planet p2) -> p1.getDistanceFromSun() - p2.getDistanceFromSun()));
 
 		System.out.println("By distance from the sun: " + planets);
 
 		// 2. Sort the planets in alphabetical order
 
-		Collections.sort(planets, new Comparator<Planet>() {
-
-			@Override
-			public int compare(Planet p1, Planet p2) {
-				return p1.getName().compareTo(p2.getName());
-			}
-
-		});
+		Collections.sort(planets, ((Planet p1, Planet p2) -> p1.getName().compareTo(p2.getName())));
 
 		System.out.println("In alphabetical order: " + planets);
 
 		// 3. Sort planets from largest to smallest
 
-		Collections.sort(planets, new Comparator<Planet>() {
-
-			@Override
-			public int compare(Planet p1, Planet p2) {
-				return Double.compare(p2.getVolume(), p1.getVolume());
-			}
-
-		});
+		Collections.sort(planets, ((Planet p1, Planet p2) -> Double.compare(p2.getVolume(), p1.getVolume())));
 
 		System.out.println("Largest to smallest: " + planets);
 	}

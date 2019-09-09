@@ -11,14 +11,7 @@ public class _3_JobCandidateSelectorUsingLambdas {
 
 		// 1. Sort the candidates by salary requirements, low to high.
 
-		Collections.sort(JobCandidate.jobCandidates, new Comparator<JobCandidate>() {
-
-			@Override
-			public int compare(JobCandidate jc1, JobCandidate jc2) {
-				return jc1.getSalaryRequired() - jc2.getSalaryRequired();
-			}
-		});
-
+		Collections.sort(JobCandidate.jobCandidates, ((JobCandidate jc1, JobCandidate jc2) -> jc1.getSalaryRequired() - jc2.getSalaryRequired()));
 		System.out.println(JobCandidate.jobCandidates);
 
 		// 2. Filter out any candidates that have not been taught by me (June)
